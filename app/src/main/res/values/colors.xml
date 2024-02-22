@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_ucloud_title">#3A3F42</color>
+    <color name="color_slidebar_title">#848484</color>
+    <color name="color_slidebar_bg">#F2F2F2</color>
+</resources>

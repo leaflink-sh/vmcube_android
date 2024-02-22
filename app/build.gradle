@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+//import org.apache.tools.ant.taskdefs.condition.Os
+// Project Structure에서 설정한 NDK 경로를 읽어들여 Return합니다.
+def getNdkBuildPath() {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    def command =  properties.getProperty('ndk.dir')
+    if (android.system.Os.isFamily(Os.FAMILY_WINDOWS)) {
+        command += "\\ndk-build.cmd"
+    } else {
+        command += "/ndk-build"
+    }
+
+    return command
+}
+
+android {
+    signingConfigs {
+    }
+    //noinspection GradleCompatible
+    compileSdkVersion 28
+    buildToolsVersion "30.0.2"
+    defaultConfig {
+        applicationId 'kr.co.lguplus.mucloud'
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 11
+        versionName '1.0.0'
+
+        ndk {
+            moduleName "ucloudJNI"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res/drawable-xhdpi']
+            jniLibs.srcDirs = ['src/main/libs']
+            jni.srcDirs = []
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+    productFlavors {
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation files('libs/simple-side-drawer2.jar')
+    implementation files('libs/sdk-v1.0.0.jar')
+    implementation files('libs/look_v1.2.1.jar')
+    implementation 'gun0912.ted:tedpermission:2.2.3'
+    //MSAL
+    implementation ("com.microsoft.identity.client:msal:2.+") { exclude group: 'com.microsoft.device.display'}
+}
+
+
+//$ cd app/src/main
+//$ mkdir jni
+//javah -d jni -classpath $ANDROID_HOME/platforms/android-23/android.jar:$ANDROID_HOME/extras/android/support/v7/appcompat/libs/android-support-v7-appcompat.jar:$ANDROID_HOME/extras/android/support/v7/appcompat/libs/android-support-v4.jar:../../build/intermediates/classes/debug kr.co.lguplus.mucloud.CPCProperty
+//
+//

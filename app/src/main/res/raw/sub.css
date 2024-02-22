@@ -1,0 +1,159 @@
+@charset "utf-8";
+
+/* base */
+input[type="text"],
+input[type="password"],
+textarea {border:1px solid #e3e3e3; padding:8px 10px;}
+input.fullWidth,
+textarea.fullWidth {width:100%;}
+a, a:link {color:#f55858; text-decoration:underline;}
+
+/* Common */
+.firstBlock {margin-top:0 !important;}
+.inputCheckBlock {margin-left:30px;}
+.inputVertical {margin-bottom:5px;}
+.inputbirth {text-align:center; padding:10px 0;}
+.btnInputVertical {margin-top:10px;}
+.badge {font-size:11px; background:#f65859; color:#fff; padding:2px 4px;}
+.clear {clear: both;}
+.strong {font-weight:bold;}
+
+/* Layout */
+body{background:#f5f6f8;}
+#wrap {position:relative; padding-top:47px;}
+#header {position:fixed; left:0; top:0; width:100%; background:#f65859; color:#FFF; font-size:18px; padding:10px 0; text-align:center; z-index:100;}
+/*#header {position:relative; background:#f65859; color:#FFF; font-size:18px; padding:10px 0; text-align:center;}*/
+#container {position:relative; padding:30px 30px; max-width:400px; margin:0 auto; }
+#container.full {padding:0; max-width:100%;}
+#content {position:relative;}
+#footer {color:#343436; font-size:13px; text-align: center; margin:20px 0;}
+#footer .title {color:#D80546;}
+
+/* Layout-Vertical-middle */
+body.verticalMid {background:#f5f6f8; display:table;}
+body.verticalMid #wrap {position:relative; display:table-cell; vertical-align:middle;}
+
+body.verticalMidNotitle {background:#f5f6f8; display:table;}
+body.verticalMidNotitle #wrap {position:relative; display:table-cell; vertical-align:middle; padding-top:0;}
+body.verticalMidNotitle #header {position:absolute; left:-9999px; top:-9999px; text-indent:-9999px; width:1px; height:1px;}
+
+/* page */
+.btnAreaMarg {margin:22px auto 20px; padding:0 30px; max-width:400px; text-align:center;}
+.mainDesc {line-height:1.5; margin-bottom:20px;}
+
+/* Button */
+.btn {position:relative; display:inline-block; font-size:16px; font-weight:normal; cursor:pointer; padding:9px; border:0; text-align:center; white-space:nowrap; text-decoration:none !important;}
+
+.btn.default {background:#3a3f42; color:#fff;}
+.btn.default:hover {background:#4D5255; transition: all 0.05s ease-out;}
+.btn.default:active {background:#333; box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.3);}
+.btn.primary {background:#f65859; color:#fff;}
+.btn.primary:hover {background:#ff6768; transition: all 0.05s ease-out;}
+.btn.primary:active {background:#e93233; box-shadow: inset 0px 5px 5px 0px rgba(0,0,0,0.3);}
+.btn.success {background:#848484; color:#fff;}
+
+.btn .strong {font-weight:bold}
+.btn.fullWidth {width:100%;}
+.btn.small {font-size:12px; padding:5px 10px;}
+
+/* Icon */
+.icon {display:inline-block; width:12px; height:12px; background:url('../images/icon.png') no-repeat 0 0; background-size:24px; overflow:hidden; vertical-align:middle;}
+.icon.down {background-position:0px 0px}
+.icon.check {background-position:-12px 0px}
+
+.icon.big {width:16px; height:16px; background-size:32px;}
+.big.check {background-position:-16px 0px}
+
+/* 접속화면 */
+body#connect {background:#FFF;}
+body#connect #wrap {padding-top:0;}
+body#connect .connectWrap {background:url() no-repeat center top;}
+body#connect #header {position:absolute; left:-9999px; top:-9999px; text-indent:-9999px; width:1px; height:1px;}
+
+.Lthema_1 {position:relative;background:#ccc}
+.Lthema_1 .LportalVisual {background:url(../images/thema_01.gif) no-repeat center 0; background-size:cover;}
+.LportalVisual {position:relative; height:345px;margin:0 auto}
+.LbtnMonitor {position:absolute;bottom:0;right:0}
+.LbtnMonitor a {float:left; width:80px;height:80px; background:url(../images/btn_monitor.png) no-repeat -80px 0}
+.LbtnMonitor a.Lcurrent {background-position:0 0}
+
+.LblockConnect {position:relative;top:67px; width:270px;height:280px; margin:0px auto; background:url(../images/bg_monitor.png) no-repeat 0px 0; background-size:270px;}
+.Lbadge {position:absolute;top:3px;left:18px; display:inline-block;padding-bottom:2px;padding-right:2px; background:url(../images/bg_badge.png) no-repeat 2px 2px}
+.Lbadge p {display:inline-block;padding:6px 12px;border-bottom:1px solid #212123;border-right:1px solid #212123;background:#5c5c5d;font-size:11px;font-weight:bold;color:#fff}
+.Lconnect {padding-top:30px;text-align:center;color:#fff;}
+.Lconnect .Ldesc {display:inline-block; padding:12px 0 12px 45px; background:url(../images/ic_cloud.png) no-repeat 0px 10px; background-size:40px;}
+.Lconnect .Lbtn_disconnect {display:none;}
+a.Lbtn_connect {display:block; width:130px;height:38px;margin:10px auto 0; background:url(../images/btn_connect.png) no-repeat 0px 0px; background-size:130px; text-indent:-9999px;}
+a.Lbtn_connect:hover {background:url(../images/btn_connect_hover.png) no-repeat 0px 0px; background-size:130px;}
+a.Lbtn_connect:active {background:url(../images/btn_connect_act.png) no-repeat 0px 0px; background-size:130px;}
+
+.Ldisconnect {padding-top:30px;text-align:center;color:#fff;}
+.Ldisconnect .Ldesc {display:inline-block; padding:12px 0 12px 45px; background:url(../images/ic_cloud.png) no-repeat 0px -45px; background-size:40px;}
+.Ldisconnect .Lbtn_connect {display:none;}
+a.Lbtn_disconnect,
+a.Lbtn_disconnect:hover,
+a.Lbtn_disconnect:active  {display:block; width:130px;height:38px;margin:10px auto 0; background:url(../images/btn_recover.png) no-repeat 0px 0px; background-size:130px;  text-indent:-9999px;}
+
+.Lnovm {padding-top:30px;text-align:center;color:#fff;}
+.Lnovm .Ldesc {line-height:1.5; padding:45px 40px 0; background:url(../images/ic_cloud.png) no-repeat center -45px; background-size:40px;}
+.Lnovm a.Lbtn_connect,
+.Lnovm a.Lbtn_disconnect {display:none;}
+
+.LconnectSelf {position:relative;margin:0 auto;text-align:center}
+.LconnectSelf .LinnerWrap.Ldropdown {display:inline-block;border-right:none;float:none;text-align:left;}
+.LconnectSelf .Lbtn_self {display:inline-block;padding:5px 40px 7px 16px;border-bottom:3px solid #bdc3b8; background:#fff url(../images/blt_arrow_red_up.png) no-repeat right 0px; background-size:26px;}
+.LconnectSelf .Lactive .Lbtn_self {border-bottom:none; background:#fff url(../images/blt_arrow_red_down.png) no-repeat right 0px; background-size:26px;}
+.LconnectSelf a.Lbtn_self {color:#323f47;text-decoration:none;font-size:13px}
+.LconnectSelf .LblockStep {display:none;background:#4f5960;font-weight:bold}
+.LconnectSelf .LblockStep li {padding:10px 0;cursor:pointer}
+.LconnectSelf .LblockStep li:hover {background:#31383e}
+.LconnectSelf .LblockStep li span {padding:0 5px;color:#fff;}
+.LconnectSelf .LblockStep li span:first-child {padding:0 5px 0 20px;color:#b6b6b6}
+.LconnectSelf .Lactive .LblockStep {display:block}
+
+/* 인증 */
+.certRecvKind {font-size:16px; text-align:center; margin:20px 0;}
+.certMembInfo {padding:10px; font-size:16px; text-align:center; border:1px solid #e3e3e3; background:#fff;}
+.certRecvInfo {padding:10px; font-size:16px; text-align:center; border:1px solid #e3e3e3; margin-top:15px; background:#fff;}
+.certNumBlock {margin-top:25px; border-top:1px solid #e3e3e3;}
+.certNumBlock .desc {text-align:center; line-height:1.5; padding:12px 0;}
+
+/* 계정관련 */
+.descPW {margin-bottom:40px; text-align:center; background:url('../images/bg_ico_pw.png') no-repeat center top; background-size:130px; padding:115px 0 0;}
+.descPW.dayOver {background-image:url('../images/bg_ico_pw_dayover.png');}
+
+/* FAQ */
+body#faq {background:#FFF;}
+body#faq .faqList > li {border-bottom:1px solid #d9d9d9;}
+body#faq .question {position:relative; padding:15px 40px 15px 30px; cursor:pointer; background:url('../images/faq_arrow_show.png') no-repeat center right; background-size:24px;}
+body#faq .question.open {background:url('../images/faq_arrow_hide.png') no-repeat center right; background-size:24px;}
+body#faq .answer {position:relative; padding:15px 12px 15px 30px; background:#f1f1f1;}
+body#faq .icoQ,
+body#faq .icoA {position:absolute; left:10px; top:15px; font-weight:bold;}
+body#faq .icoQ {color:#f03860;}
+body#faq .icoA {color:#5d6e80;}
+
+/* Notice */
+body#notice {background:#FFF;}
+.notcHeader {position:relative; border-bottom:1px solid #d9d9d9; padding:15px 90px 15px 15px;}
+.notcTitle {font-weight:bold; color:#333;}
+.notcDate {position:absolute; right:15px; top:50%; margin-top:-10px;}
+.notcContent {background:#f1f1f1; border-bottom:1px solid #d9d9d9; padding:15px 20px;}
+
+/* 라이센스 정책 */
+body#license {background:#FFF;}
+.lisncTitle {position:relative; font-weight:bold; color:#333; border-bottom:1px solid #d9d9d9; padding:15px 20px;}
+.lisncContent {background:#f1f1f1; border-bottom:1px solid #d9d9d9; padding:15px 20px;}
+
+/* 앱 배포*/
+.descAppDown {margin-bottom:30px; text-align:center; background:url('../images/bg_ico_app.png') no-repeat center top; background-size:130px; padding:190px 0 0;}
+
+/* 필수 설치 앱 */
+.appList {border:1px solid #dadada; margin-bottom:20px;}
+.appList li {position:relative; border-top:1px solid #dadada; padding:13px 65px 13px 15px; background:#FFF;}
+.appList li .btn {position:absolute; right:10px; top:50%; margin-top:-15px;}
+.appList li:first-child {border-top:none;}
+
+/* ERROR */
+#wrap.error {background:#252a2f;}
+#wrap.error .errorText {font-size:14px; color:#FFF; font-weight:bold; text-align:center; background:url('file:///android_res/raw/bg_ico_error.png') no-repeat center top; background-size:150px; padding:170px 0 20px;}

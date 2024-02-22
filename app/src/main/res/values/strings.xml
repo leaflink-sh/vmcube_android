@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">U Cloud</string>
+
+    <string name="title_activity_web_view">WebViewActivity</string>
+    <string name="title_activity_package_install">PackageInstallActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="dialog_settitle_notice">[알림]</string>
+
+    <string name="msg_req_permission_grant">U Cloud 앱을 접속하기 위해서는 필수 앱 권한을 허용해주셔야 합니다.</string>
+
+
+    <string name="ALERT_DIALOG_OS_NOTSUPPORT">현재 OS는 지원하지 않습니다.</string>
+    <string name="ALERT_DIALOG_ROOTING">루팅된 단말기에서는 앱을 실행할 수 없습니다.</string>
+    <string name="ALERT_DIALOG_INSTALL_RECEIVER">Citrix Receiver를 설치후 이용이 가능합니다.\n설치 하시겠습니까?</string>
+    <string name="ALERT_DIALOG_INSTALL_MDM">보안상 화면캡쳐방지앱을 설치후 이용이 가능합니다.</string>
+    <string name="ALERT_DIALOG_APP_CLOSE">앱을 종료하시겠습니까?</string>
+    <string name="ALERT_DIALOG_APP_IF_ERROR">서버에서 응답이 없으므로 프로그램을 종료합니다.</string>
+    <string name="ALERT_DIALOG_DISK_LOCK_REQ_SUCCESS">Cloud Disk 잠금 요청(해지)을 성공하였습니다.</string>
+    <string name="ALERT_DIALOG_DISK_LOCK_REQ_FAILED">Cloud Disk 잠금 요청을 실패하였습니다.</string>
+    <string name="ALERT_DIALOG_RECOVER">장애복구가 요청되었습니다.</string>
+    <string name="ALERT_DIALOG_REBOOT">리부팅이 요청되었습니다.</string>
+    <string name="ALERT_DIALOG_IF_ERROR">서버가 응답하지 않습니다.\n관리자에 문의하시기 바랍니다.</string>
+    <string name="ALERT_DIALOG_NEW_PKG">새로운 버전의 앱이 존재합니다.\n다운로드 후 설치 하시겠습니까?</string>
+    <string name="ALERT_DIALOG_NEED_INSTALL_MDM">필수 앱인 화면캡쳐방지앱을 설치해야합니다.\n다운로드 페이지로 이동 하시겠습니까?</string>
+    <string name="ALERT_DIALOG_UPGRADE_MDM_PKG">새로운 버전의 화면캡쳐방지앱이 존재합니다.\n다운로드 후 설치 하시겠습니까?</string>
+    <string name="ALERT_DIALOG_MDM_IF_FAIL">필수 앱인 MDM 최신정보 수신에 실패하였습니다.</string>
+    <string name="ALERT_DIALOG_DISk_LOCK_EXECUTE">Cloud Disk 잠금 요청(해지)를 요청하시겠습니까?</string>
+    <string name="ALTER_DIALOG_NEED_LOGIN">로그인 후 이용이 가능합니다.</string>
+
+    <string name="side_bar_title">설정</string>
+    <string name="title_activity_web_popup">WebPopupActivity</string>
+    <string name="disk_lock">Cloud Disk 잠금 설정</string>
+    <string name="disk_unlock">Cloud Disk 잠금 해지</string>
+    <string name="title_msg_update">최신 버전을 다운로드 중입니다. 잠시만 기다려주십시오.</string>
+
+    <string name="btn_confirm">확인</string>
+    <string name="btn_cancel">취소</string>
+
+    <!-- Jiran MDM Message -->
+    <string name="mdm_no_installed">모바일키퍼 앱이 설치되지 않았습니다.\n앱 설치 후 반드시 로그인하시기 바랍니다.</string>
+    <string name="mdm_init_error">앱 위변조가 발견되었습니다.\n앱을 재 설치 후 이용해주세요.</string>
+
+    <!-- TERUTEN MDM  -->
+    <string name="tmw_alert_access_title">접근성 권한</string>
+    <string name="tmw_alert_access_message">접근성 허용에 동의해야 화면 캡쳐 방지 기능이 정상적으로 동작합니다.\n
+                * 확인 버튼 선택시 접근성 설정 페이지로 이동합니다.\n
+                * 서비스 항목 -> [TMW 화면 캡쳐 방지] 선택 -> 사용 설정</string>
+
+    <!-- AhnLab Message -->
+    <string name="ahnlab_alert_title">필수앱 설치 안내</string>
+    <string name="ahnlab_alert_message">V3 Mobile Plus 앱이 설치되지 않았습니다.\n앱 설치 후 이용하시기 바랍니다.</string>
+
+    <!-- Microsoft Intune 회사 포털 앱 Message -->
+    <string name="intune_alert_title">필수앱 설치 안내</string>
+    <string name="intune_alert_message">MS Intune 회사 포털 앱이 설치되지 않았습니다.\n앱 설치 후 이용하시기 바랍니다.</string>
+
+    <!-- Microsoft Intune Auth Message -->
+    <string name="msauth_alert_title">MS Intune 인증 안내</string>
+    <string name="msauth_alert_message">MS Intune 회사 포털에 인증되지 않았습니다.\n로그인 후 이용하시기 바랍니다.</string>
+
+</resources>

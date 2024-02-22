@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/rightBehindMenuScroll" >
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="@color/color_slidebar_bg"
+        >
+        <!--
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:padding="0dp"
+            android:background="@color/color_slidebar_title"
+            >
+            <!--
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ico_setting"
+                android:padding="0dp"
+                />-->
+
+            <TextView
+                android:id="@+id/slide_bar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:typeface="normal"
+                android:textStyle="normal"
+                android:textSize="22dp"
+                android:textColor="@color/color_white"
+                android:text="@string/side_bar_title"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_hide_slider"
+                android:src="@drawable/ico_close"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:layout_marginRight="13dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="0sp"
+                android:scaleType="centerCrop"
+                />
+
+        </RelativeLayout>
+
+        <!-- 비밀번호 변경
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/side_menu_change_passwd"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/bar1"
+                />
+
+            <TextView
+                android:id="@+id/slide_bar_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+
+                android:typeface="normal"
+                android:textStyle="normal"
+                android:textSize="18dp"
+                android:textColor="@color/primary_material_dark"
+                android:text="비밀번호 변경"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/side_menu_check_apps"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/bar1"
+                />
+
+            <TextView
+                android:id="@+id/slide_bar_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+
+                android:typeface="normal"
+                android:textStyle="normal"
+                android:textSize="18dp"
+                android:textColor="@color/primary_material_dark"
+                android:text="필수 설치 앱 확인"
+                />
+
+        </RelativeLayout>
+        -->
+
+        <!-- Open Source -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/side_menu_openlicense"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/bar1"
+                />
+
+            <TextView
+                android:id="@+id/slide_bar_title4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+
+                android:typeface="normal"
+                android:textStyle="normal"
+                android:textSize="18dp"
+                android:textColor="@color/primary_material_dark"
+                android:text="오픈소스 라이센스"
+                />
+
+        </RelativeLayout>
+
+        <!-- 단말등록
+        <RelativeLayout
+            android:id="@+id/menu_equip_regist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/side_menu_device_register"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/bar1"
+                />
+
+            <TextView
+                android:id="@+id/slide_bar_title6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+
+                android:typeface="normal"
+                android:textStyle="normal"
+                android:textSize="18dp"
+                android:textColor="@color/primary_material_dark"
+                android:text="단말등록"
+                />
+
+        </RelativeLayout>-->
+
+
+        <!-- Cloud Disk Lock function -->
+        <RelativeLayout
+            android:id="@+id/diskLockLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/diskUnLockLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </RelativeLayout>
+
+        <!-- Exit -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageButton
+                android:id="@+id/side_menu_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/bar1"
+                />
+
+            <TextView
+                android:id="@+id/slide_bar_title5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="40dp"
+
+                android:typeface="normal"
+                android:textStyle="normal"
+                android:textSize="18dp"
+                android:textColor="@color/primary_material_dark"
+                android:text="종료"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

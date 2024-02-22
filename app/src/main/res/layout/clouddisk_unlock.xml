@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/side_menu_diskUnLock"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/bar1"
+            />
+
+        <TextView
+            android:id="@+id/slide_bar_title4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="40dp"
+
+            android:typeface="normal"
+            android:textStyle="normal"
+            android:textSize="18dp"
+            android:textColor="@color/primary_material_dark"
+            android:text="@string/disk_unlock"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>

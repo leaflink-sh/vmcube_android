@@ -1,0 +1,21 @@
+<html>
+<head>
+    <script language="javascript">
+        function AppCallInitComplete()
+        {
+            window.CloudPCAppConnector.CallInitComplete();
+        }
+
+        function fnResult()
+        {
+            document.getElementById("lbltest1").innerText = "success";
+        }
+    </script>
+
+</head>
+<body>
+[Call Android Method] CallInitComplete()  : <input type="button" value="CallInitComplete" onClick="AppCallInitComplete()"> <Br/>
+<br/>
+<label id="lbltest1">TEST</label>
+</body>
+</html>
