@@ -1353,7 +1353,7 @@ public class MainActivity extends Activity {
                                             if(authenticationResult != null){
                                                 mAccount = authenticationResult.getAccount();
                                                 LogManager.DEBUG("LOGIN USER" + mAccount.getUsername());
-//                                                _isIntuneAuth = Boolean.TRUE;
+                                                _isIntuneAuth = Boolean.TRUE;
                                             }
                                         }
 
