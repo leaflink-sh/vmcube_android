@@ -3,7 +3,7 @@
    "client_id" : "4314d0d7-865d-4e8f-869d-56c1f0e97349",*/
   /* dev */
   "client_id" : "137035cd-79c1-4da2-a348-890f2df3f650",
-  "authorization_user_agent" : "WEBVIEW",
+  "authorization_user_agent" : "BROWSER",
   "redirect_uri" : "msauth://kr.co.lguplus.mucloud/JfQ41IDu70mcSMd6oaccZ2idpXo%3D",
   "account_mode" : "MULTIPLE",
   "broker_redirect_uri_registered": true,

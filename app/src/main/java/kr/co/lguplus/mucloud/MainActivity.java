@@ -645,7 +645,7 @@ public class MainActivity extends Activity {
                                 try {
                                     // Microsoft Intune 회사포털앱 열기
 //                                    Intent intent = getPackageManager().getLaunchIntentForPackage("com.azure.authenticator");
-                                    Intent intent = getPackageManager().getLaunchIntentForPackage("com.microsoft.windowsintune.companyportal");
+                                    Intent intent = getPackageManager().getLaunchIntentForPackage(SystemProperty.INTUNE_NAME);
                                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
 //                                    finish();

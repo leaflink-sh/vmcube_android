@@ -19,7 +19,7 @@ public class SystemProperty {
     public final static String APP_NAME = "kr.co.lguplus.mucloud";  // OI_VMC_05 - APP_NAME
     public final static String MDM_NAME = "com.teruten.mw.screencheck";
     public final static String AHNLAB_NAME = "com.ahnlab.v3mobileplus";
-    public final static String INTUNE_NAME = "com.azure.authenticator";
+    public final static String INTUNE_NAME = "com.microsoft.windowsintune.companyportal";
 
     // Cloud Disk 잠금 기능 사용..
     public static String USER_ID = null;    // 로그인 사용자 아이디
