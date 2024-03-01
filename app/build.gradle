@@ -21,7 +21,6 @@ android {
     }
     //noinspection GradleCompatible
     compileSdkVersion 28
-    buildToolsVersion "30.0.2"
     defaultConfig {
         applicationId 'kr.co.lguplus.mucloud'
         minSdkVersion 19
@@ -43,12 +42,12 @@ android {
         main {
             res.srcDirs = ['src/main/res', 'src/main/res/drawable-xhdpi']
             jniLibs.srcDirs = ['src/main/libs']
-            jni.srcDirs = []
         }
     }
     useLibrary 'org.apache.http.legacy'
     productFlavors {
     }
+    namespace 'kr.co.lguplus.mucloud'
 }
 
 dependencies {
