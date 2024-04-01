@@ -1,18 +1,13 @@
 {
-  /* prod
-   "client_id" : "4314d0d7-865d-4e8f-869d-56c1f0e97349",*/
-  /* dev */
-  "client_id" : "137035cd-79c1-4da2-a348-890f2df3f650",
-  "authorization_user_agent" : "BROWSER",
+  "client_id" : "4314d0d7-865d-4e8f-869d-56c1f0e97349",
+  "authorization_user_agent" : "DEFAULT",
   "redirect_uri" : "msauth://kr.co.lguplus.mucloud/JfQ41IDu70mcSMd6oaccZ2idpXo%3D",
-  "account_mode" : "MULTIPLE",
-  "broker_redirect_uri_registered": true,
   "authorities" : [
     {
       "type": "AAD",
       "audience": {
-        "type": "AzureADMultipleOrgs",
-        "tenant_id": "a0a40398-ce06-471a-b51e-bd8b0f02f71a"
+        "type": "AzureADMyOrg",
+        "tenant_id": "01622868-7846-4ff6-8e31-fdc8937a8c01"
       }
     }
   ]

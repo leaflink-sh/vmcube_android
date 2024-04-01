@@ -25,7 +25,7 @@ android {
         applicationId 'kr.co.lguplus.mucloud'
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 11
+        versionCode 15
         versionName '1.0.0'
 
         ndk {
@@ -43,6 +43,9 @@ android {
             res.srcDirs = ['src/main/res', 'src/main/res/drawable-xhdpi']
             jniLibs.srcDirs = ['src/main/libs']
         }
+    }
+    lintOptions {
+        disable 'ExpiredTargetSdkVersion'
     }
     useLibrary 'org.apache.http.legacy'
     productFlavors {

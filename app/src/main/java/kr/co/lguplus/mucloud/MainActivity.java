@@ -125,6 +125,8 @@ public class MainActivity extends Activity {
     //endregion
     //start MSAL
     private IMultipleAccountPublicClientApplication mMultipleAccountApp;
+    private ISingleAccountPublicClientApplication mSingleAccountApp;
+
     private List<IAccount> mAccountList;
     private IAccount mAccount;
     private final String[] mScopes = new String[] { "User.Read" };
@@ -996,7 +998,7 @@ public class MainActivity extends Activity {
             LogManager.DEBUG("doInBackground()");
 
             // Microsoft Authenticator installed??
-            checkIntuneAuthApp();;
+            checkIntuneAuthApp();
 
             // AhnLab installed??
             checkAhnLabApp();
@@ -1006,10 +1008,10 @@ public class MainActivity extends Activity {
                 // 키값 받아오기
                 OI_VMC_03();
 
-                LogManager.DEBUG("New MDM is skip : " + _isSkipMdmUpgrade);
+//                LogManager.DEBUG("New MDM is skip : " + _isSkipMdmUpgrade);
 
-                if(!_isSkipMdmUpgrade)
-                    startTmwProcess();
+//                if(!_isSkipMdmUpgrade)
+//                    startTmwProcess();
 
                 LogManager.DEBUG("MDM 설치 여부 : " + _isMdmInstalled);
 
@@ -1043,53 +1045,52 @@ public class MainActivity extends Activity {
             if(!_isINTUNEInstalled) {
                 mHandler.sendEmptyMessage(MSG_NEED_INSTALL_INTUNE);
             } else if (!_isIntuneAuth){
-                mHandler.sendEmptyMessage(MSG_NEED_INTUNE_AUTH);
+                onMultipleAccountLogin();
             } else {
                 if (_isAhnlabInstalled) {
                     // MDM이 최신 버전이거나 MDM 설치 여부를 취소 눌러 스킵을 했거나..
-                    if (_TMWResult == TMW_EXECUTE_SUCCESS || _isSkipMdmUpgrade) {
-
-                        LogManager.DEBUG("MDM 1");
-                        if (_isMdmInstalled) {
-                            LogManager.DEBUG("MDM is installed. Start MDM Activity..");
-
-                            // START MDM
-                            tmwStartScreenCaptureProtect();
-
-                            // 업데이트 정보가 존재하는지..
-                            if (_isUpdateInfo) {
-                                mHandler.sendEmptyMessage(MSG_UPDATE_LAUNCHER);
-                                mDialog.dismiss();
-                            } else {
-
-                                if (_isVMC03) {
-                                    mHandler.sendEmptyMessage(GOTO_WEBVIEW);
-                                    mDialog.dismiss();
-                                } else {
-                                    mHandler.sendEmptyMessage(MSG_IF_ERROR);
-                                    mDialog.dismiss();
-                                }
-                            }
-                        } else {
-                            mHandler.sendEmptyMessage(MSG_NEED_INSTALL_MDM);
-                            mDialog.dismiss();
-                        }
-
-                    } else if (_TMWResult == TMW_NEED_UPGRADE) {
-                        // MDM Upgrade 가 존재할 경우...
-                        mHandler.sendEmptyMessage(MSG_NEED_UPGRADE_MDM);
+//                    if (_TMWResult == TMW_EXECUTE_SUCCESS || _isSkipMdmUpgrade) {
+//
+//                        LogManager.DEBUG("MDM 1");
+//                        if (_isMdmInstalled) {
+//                            LogManager.DEBUG("MDM is installed. Start MDM Activity..");
+//
+//                            // START MDM
+//                            tmwStartScreenCaptureProtect();
+//
+//                            // 업데이트 정보가 존재하는지..
+//                            if (_isUpdateInfo) {
+//                                mHandler.sendEmptyMessage(MSG_UPDATE_LAUNCHER);
+//                                mDialog.dismiss();
+//                            } else {
+//
+                    if (_isVMC03) {
+                        mHandler.sendEmptyMessage(GOTO_WEBVIEW);
                         mDialog.dismiss();
-
                     } else {
-                        if (_TMWResult == TMW_NEED_INSTALL) {
-                            mHandler.sendEmptyMessage(MSG_NEED_INSTALL_MDM);
-                            mDialog.dismiss();
-                        } else {
-                            LogManager.ERROR("No Action");
-                            finish();
-                        }
-
+                        mHandler.sendEmptyMessage(MSG_IF_ERROR);
+                        mDialog.dismiss();
                     }
+//                            }
+//                        } else {
+//                            mHandler.sendEmptyMessage(MSG_NEED_INSTALL_MDM);
+//                            mDialog.dismiss();
+//                        }
+
+//                    } else if (_TMWResult == TMW_NEED_UPGRADE) {
+//                        // MDM Upgrade 가 존재할 경우...
+//                        mHandler.sendEmptyMessage(MSG_NEED_UPGRADE_MDM);
+//                        mDialog.dismiss();
+//
+//                    } else {
+//                        if (_TMWResult == TMW_NEED_INSTALL) {
+//                            mHandler.sendEmptyMessage(MSG_NEED_INSTALL_MDM);
+//                            mDialog.dismiss();
+//                        } else {
+//                            LogManager.ERROR("No Action");
+////                            finish();
+//                        }
+//                    }
                 } else {
                     mHandler.sendEmptyMessage(MSG_NEED_INSTALL_AHNLAB);
                 }
@@ -1229,6 +1230,24 @@ public class MainActivity extends Activity {
     }
 
     private void processMSAL(){
+        try {
+            android.content.pm.PackageInfo info = getPackageManager().getPackageInfo(
+                    "kr.co.lguplus.mucloud",
+                    android.content.pm.PackageManager.GET_SIGNATURES);
+            for (android.content.pm.Signature signature : info.signatures) {
+                java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                String aaa = android.util.Base64.encodeToString(md.digest(),
+                        android.util.Base64.DEFAULT);
+                android.util.Log.d("KeyHash", "KeyHash:" + android.util.Base64.encodeToString(md.digest(),
+                        android.util.Base64.DEFAULT));
+
+            }
+        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+
+        } catch (java.security.NoSuchAlgorithmException e) {
+
+        }
         // 1. Multiple Account Client 생성하기
         PublicClientApplication.createMultipleAccountPublicClientApplication(this,
                 R.raw.auth_config_multiple_account,

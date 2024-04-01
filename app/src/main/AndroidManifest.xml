@@ -46,17 +46,14 @@
         <activity android:name="com.microsoft.identity.client.BrowserTabActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data
                     android:host="kr.co.lguplus.mucloud"
                     android:path="/JfQ41IDu70mcSMd6oaccZ2idpXo="
                     android:scheme="msauth" />
             </intent-filter>
         </activity>
-
         <service
             android:name=".AppService"
             android:stopWithTask="false"
