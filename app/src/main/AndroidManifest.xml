@@ -49,7 +49,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:host="kr.co.lguplus.mucloud"
+                    android:host="kr.co.lguplus.mucloud.android"
                     android:path="/JfQ41IDu70mcSMd6oaccZ2idpXo="
                     android:scheme="msauth" />
             </intent-filter>
@@ -59,7 +59,7 @@
             android:stopWithTask="false"
             >
             <intent-filter>
-                <action android:name="kr.co.lguplus.mucloud"/>
+                <action android:name="kr.co.lguplus.mucloud.android"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </service>

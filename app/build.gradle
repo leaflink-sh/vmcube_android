@@ -22,10 +22,10 @@ android {
     //noinspection GradleCompatible
     compileSdkVersion 28
     defaultConfig {
-        applicationId 'kr.co.lguplus.mucloud'
+        applicationId 'kr.co.lguplus.mucloud.android'
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 15
+        versionCode 16
         versionName '1.0.0'
 
         ndk {

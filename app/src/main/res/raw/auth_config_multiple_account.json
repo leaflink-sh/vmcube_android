@@ -1,7 +1,7 @@
 {
-  "client_id" : "4314d0d7-865d-4e8f-869d-56c1f0e97349",
+  "client_id" : "85128586-d215-4211-8d2a-cf9bf242eb9e",
   "authorization_user_agent" : "DEFAULT",
-  "redirect_uri" : "msauth://kr.co.lguplus.mucloud/JfQ41IDu70mcSMd6oaccZ2idpXo%3D",
+  "redirect_uri" : "msauth://kr.co.lguplus.mucloud.android/JfQ41IDu70mcSMd6oaccZ2idpXo%3D",
   "authorities" : [
     {
       "type": "AAD",

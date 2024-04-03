@@ -239,8 +239,27 @@ public class MainActivity extends Activity {
         // 앱 권한 체크 및 요청..
         requestPermission("TED");
 
+        try {
+            android.content.pm.PackageInfo info = getPackageManager().getPackageInfo(
+                    "kr.co.lguplus.mucloud.android",
+                    android.content.pm.PackageManager.GET_SIGNATURES);
+            for (android.content.pm.Signature signature : info.signatures) {
+                java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                String aaa = android.util.Base64.encodeToString(md.digest(),
+                        android.util.Base64.DEFAULT);
+                android.util.Log.d("KeyHash", "KeyHash:" + android.util.Base64.encodeToString(md.digest(),
+                        android.util.Base64.DEFAULT));
+
+            }
+        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+
+        } catch (java.security.NoSuchAlgorithmException e) {
+
+        }
+
         //initialize MSAL
-        processMSAL();
+//        processMSAL();
 
     }
 
@@ -1042,11 +1061,12 @@ public class MainActivity extends Activity {
 
             LogManager.DEBUG("onPostExecute() " + _TMWResult);
 
-            if(!_isINTUNEInstalled) {
-                mHandler.sendEmptyMessage(MSG_NEED_INSTALL_INTUNE);
-            } else if (!_isIntuneAuth){
-                onMultipleAccountLogin();
-            } else {
+//            if(!_isINTUNEInstalled) {
+//                mHandler.sendEmptyMessage(MSG_NEED_INSTALL_INTUNE);
+//            } else if (!_isIntuneAuth){
+//                mHandler.sendEmptyMessage(MSG_NEED_INTUNE_AUTH);
+////                onMultipleAccountLogin();
+//            } else {
                 if (_isAhnlabInstalled) {
                     // MDM이 최신 버전이거나 MDM 설치 여부를 취소 눌러 스킵을 했거나..
 //                    if (_TMWResult == TMW_EXECUTE_SUCCESS || _isSkipMdmUpgrade) {
@@ -1094,7 +1114,7 @@ public class MainActivity extends Activity {
                 } else {
                     mHandler.sendEmptyMessage(MSG_NEED_INSTALL_AHNLAB);
                 }
-            }
+//            }
           /*
             if(_isRooting) {  // 루팅된 폰이면....
                 //LogManager.DEBUG("END : rooting");
@@ -1230,24 +1250,24 @@ public class MainActivity extends Activity {
     }
 
     private void processMSAL(){
-        try {
-            android.content.pm.PackageInfo info = getPackageManager().getPackageInfo(
-                    "kr.co.lguplus.mucloud",
-                    android.content.pm.PackageManager.GET_SIGNATURES);
-            for (android.content.pm.Signature signature : info.signatures) {
-                java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA");
-                md.update(signature.toByteArray());
-                String aaa = android.util.Base64.encodeToString(md.digest(),
-                        android.util.Base64.DEFAULT);
-                android.util.Log.d("KeyHash", "KeyHash:" + android.util.Base64.encodeToString(md.digest(),
-                        android.util.Base64.DEFAULT));
-
-            }
-        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
-
-        } catch (java.security.NoSuchAlgorithmException e) {
-
-        }
+//        try {
+//            android.content.pm.PackageInfo info = getPackageManager().getPackageInfo(
+//                    "kr.co.lguplus.mucloud",
+//                    android.content.pm.PackageManager.GET_SIGNATURES);
+//            for (android.content.pm.Signature signature : info.signatures) {
+//                java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA");
+//                md.update(signature.toByteArray());
+//                String aaa = android.util.Base64.encodeToString(md.digest(),
+//                        android.util.Base64.DEFAULT);
+//                android.util.Log.d("KeyHash", "KeyHash:" + android.util.Base64.encodeToString(md.digest(),
+//                        android.util.Base64.DEFAULT));
+//
+//            }
+//        } catch (android.content.pm.PackageManager.NameNotFoundException e) {
+//
+//        } catch (java.security.NoSuchAlgorithmException e) {
+//
+//        }
         // 1. Multiple Account Client 생성하기
         PublicClientApplication.createMultipleAccountPublicClientApplication(this,
                 R.raw.auth_config_multiple_account,
